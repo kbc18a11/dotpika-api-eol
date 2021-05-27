@@ -7,7 +7,7 @@ services:
     volumes:
       - ./api:/home/app
     ports:
-      - '3000:3000'
+      - '5080:5080'
   nginx:
     image: nginx
     container_name: 'nginx'
@@ -15,5 +15,5 @@ services:
       - '80:80'
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-    links:
-      - 'api'
+    depends_on:
+      - api
