@@ -2,6 +2,6 @@ FROM node:14
 
 WORKDIR /home/app
 
-RUN npm ci
+RUN npm install
 
 CMD [ "npm","run","start:dev" ]
